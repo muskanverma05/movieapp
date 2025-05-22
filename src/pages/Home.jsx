@@ -53,16 +53,14 @@ function Home() {
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-
       <form
         onSubmit={handleSearch}
         className="search-form"
         role="search"
-        aria-label="Search for movies"
+        aria-label="Movie Search Form"
       >
-        {/* Visually hidden label for screen reader */}
         <label htmlFor="search-input" className="visually-hidden">
-          Movie title
+          Search for a movie
         </label>
         <input
           id="search-input"
@@ -76,18 +74,16 @@ function Home() {
         <button
           type="submit"
           className="search-button"
-          aria-label="Search movies"
+          aria-label="Submit search"
         >
           Search
         </button>
       </form>
-
       {error && (
         <div className="error-message" role="alert" aria-live="assertive">
           {error}
         </div>
       )}
-
       {loading ? (
         <div className="loading" role="status" aria-live="polite">
           Loading...
@@ -98,12 +94,17 @@ function Home() {
           id="main-content"
           ref={resultRef}
           tabIndex="-1"
+          role="region"
           aria-label="Search results"
           aria-live="polite"
         >
-          {movies.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
+          {movies.length === 0 ? (
+            <p className="no-results" role="note">
+              No movies found.
+            </p>
+          ) : (
+            movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)
+          )}
         </div>
       )}
     </div>

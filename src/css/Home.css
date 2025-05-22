@@ -56,6 +56,12 @@
   box-sizing: border-box;
 }
 
+/* No Results Message */
+.no-results {
+  font-size: 1.2rem;
+  color: #ccc;
+  text-align: center;
+}
 /* Mobile Responsiveness */
 @media (max-width: 639px) {
   .home {

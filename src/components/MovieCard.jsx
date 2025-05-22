@@ -12,7 +12,11 @@ function MovieCard({ movie }) {
   }
 
   return (
-    <article className="movie-card" aria-labelledby={`movie-title-${movie.id}`}>
+    <article
+      className="movie-card"
+      aria-labelledby={`movie-title-${movie.id}`}
+      tabIndex="0"
+    >
       <div className="movie-poster">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -29,6 +33,9 @@ function MovieCard({ movie }) {
             aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
           >
             ♥
+            <span className="visually-hidden">
+              {favorite ? "Remove from favorites" : "Add to favorites"}
+            </span>
           </button>
         </div>
       </div>

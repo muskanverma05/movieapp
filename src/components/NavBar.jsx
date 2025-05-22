@@ -30,7 +30,9 @@ function NavBar() {
           <button
             onClick={toggleDarkMode}
             aria-pressed={darkMode}
-            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              darkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
             className="dark-mode-toggle"
           >
             {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}

@@ -20,11 +20,7 @@ function Favorites() {
     <main className="favorites" role="main" aria-label="Favorites Page">
       {hasFavorites ? (
         <>
-          <h2
-            ref={headingRef}
-            tabIndex="-1"
-            id="favorites-heading"
-          >
+          <h2 ref={headingRef} tabIndex="-1" id="favorites-heading">
             Your Favorite Movies
           </h2>
 
@@ -34,11 +30,7 @@ function Favorites() {
             aria-label="List of favorite movies"
           >
             {favorites.map((movie) => (
-              <MovieCard
-                key={movie.id}
-                movie={movie}
-                role="listitem"
-              />
+              <MovieCard key={movie.id} movie={movie} role="listitem" />
             ))}
           </section>
         </>
@@ -47,15 +39,12 @@ function Favorites() {
           className="favorites-empty"
           role="region"
           aria-labelledby="no-favorites-heading"
+          aria-live="polite"
         >
-          <h2
-            id="no-favorites-heading"
-            ref={headingRef}
-            tabIndex="-1"
-          >
+          <h2 id="no-favorites-heading" ref={headingRef} tabIndex="-1">
             No Favorite Movies Yet
           </h2>
-          <p tabIndex="0">
+          <p tabIndex="0" lang="en">
             Start adding movies to your favorites and they will appear here.
           </p>
         </section>

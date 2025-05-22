@@ -25,6 +25,14 @@
   transition: background-color 0.2s;
 }
 
+.navbar a:focus,
+.navbar button:focus {
+  outline: 3px solid #e50914;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+
 .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
